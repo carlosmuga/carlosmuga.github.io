@@ -2,9 +2,37 @@
 layout: post
 title: You're up and running!
 ---
+En informática, inyección de dependencias (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase la que cree dichos objetos. Esos objetos cumplen contratos que necesitan nuestras clases para poder funcionar (de ahí el concepto de dependencia). Nuestras clases no crean los objetos que necesitan, sino que se los suministra otra clase 'contenedora' que inyectará la implementación deseada a nuestro contrato.
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+siempre ha sido uno de los conceptos que cuesta entender en el mundo del desarrollo de software sobre todo a la gente que esta empezando. ¿Para qué sirve este patrón de diseño y cual es su utilizad? Normalmente cuando nosotros programamos en el día a día con la programación orientada a objeto nos encontramos construyendo objetos y relacionando objetos utilizando dependencias.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+https://www.arquitecturajava.com/wp-content/uploads/inyecciondependenciaobjeto.png
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+
+Por ejemplo podemos tener un programa principal que use un sencillo servicio de impresión para imprimir un documento.
+
+package com.arquitecturajava;
+public class ServicioImpresion {
+  
+  public void imprimir() {
+    
+    System.out.println("enviando el documento a imprimir");
+    
+    System.out.println("imprimiendo el documento en formato pdf");
+  }
+}
+
+Utilizamos un programa main e imprimimos:
+
+package com.arquitecturajava;
+public class Principal {
+  public static void main(String[] args) {
+  
+    ServicioImpresion miServicio= new ServicioImpresion();
+    
+    miServicio.imprimir();
+  }
+}
+
+
+
